@@ -1,7 +1,7 @@
 {
    "background": {
       "persistent": true,
-      "scripts": [ "js/background.js" ]
+      "page": "background.html"
    },
    "content_scripts": [ {
       "all_frames": true,
@@ -20,5 +20,5 @@
    "offline_enabled": true,
    "permissions": [ "<all_urls>", "tabs", "webNavigation", "storage"],
    "version": "1.0",
-   "web_accessible_resources": [ "ing/icon.png"]
+   "web_accessible_resources": [ "img/icon.png"]
 }

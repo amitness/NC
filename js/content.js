@@ -1,6 +1,3 @@
-function replace(){
-  var text = document.getElementsByTagName("body")[0].innerHTML;
-  text=text.replace("/$[0-9]{*}/ig", "test");
-  console.log(text+"re");
-}
-replace();
+chrome.runtime.sendMessage({method: "getLocalStorage", key: "USD"}, function(response) {
+  console.log("From NC extension >> USD: "+response.data+"<<"); // log in all url 
+});
