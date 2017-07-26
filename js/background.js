@@ -1,5 +1,5 @@
 if (!localStorage.apiURL) {
-  localStorage.apiURL = "https://www.nrb.org.np/exportForexJSON.php?YY=2017&MM=06&DD=21&YY1=2017&MM1=07&DD1=22";
+  localStorage.apiURL = "https://www.nrb.org.np/exportForexJSON.php";
 }
 if (!localStorage.lastUpdate) {
   localStorage.lastUpdate = false;
