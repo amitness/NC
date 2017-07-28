@@ -5,11 +5,11 @@ function getData() {
       $.each(data.Conversion.Currency, function(key, val) {
         localStorage[val.BaseCurrency]=val.TargetBuy;
       });
-      localStorage["updated"] = new Date();
+      localStorage["lastUpdate"] = new Date();
       console.log("[*] data updated.");
     }
   if (status == 'error') {
-    console.log("[!] error while updating")
+    console.log("[!] error while updating.")
   }
   })
 }
