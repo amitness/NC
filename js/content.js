@@ -4,9 +4,9 @@ chrome.runtime.sendMessage({
   var usd = Number(response.USD);
 
   // ======================== TEST =============================
-  regReplace(/\$\s?(,?\.?\d*)*/i, /\$/ig, usd);
+  regReplace(/(\$|usd|usd:)\s?(,?\.?\d)+/i, /[^0-9.]/ig, usd);
   setInterval(function() {
-    regReplace(/\$\s?(,?\.?\d*)*/i, /\$/ig, usd);
+    regReplace(/(\$|usd|usd:)\s?(,?\.?\d)+/i, /[^0-9.]/ig, usd);
   }, Number(response.updateRate));
 
 });
@@ -17,7 +17,7 @@ function regReplace(reg, filterReg, rate) {
     ARGS:
       reg:  RegEX to match currency string.
       filterReg:  RegEX to filter number from matched currency string.
-      rate: exchange rate in NPR.
+      rate: exchange rate in NPR to conver.
    */
   var elements = document.getElementsByTagName('*');
   var total = 0;
@@ -32,7 +32,7 @@ function regReplace(reg, filterReg, rate) {
         var found = 0;
         while (reg.test(text)) {
           found++;
-          total+=found;
+          total++;
           var cur_usd = reg.exec(text)[0].replace(filterReg, '');
           text = text.replace(reg, "Rs. " + Math.ceil(rate * Number(cur_usd)));
         }
