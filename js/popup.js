@@ -12,10 +12,10 @@ function varUpdate() {
 
     if (localStorage.isPause == "true") {
       powerBtn.classList.add("btn-danger");
-      powerBtn.value = "Paused";
+      powerBtn.value = "OFF";
     }else{
       powerBtn.classList.add("btn-info");
-      powerBtn.value = "Running";
+      powerBtn.value = "ON";
     }
 
   $("#powerBtn").click(function(){
@@ -23,12 +23,12 @@ function varUpdate() {
       localStorage.isPause = false;
       this.classList.remove("btn-danger");
       this.classList.add("btn-info");
-      this.value = "Running";
+      this.value = "ON";
     }else{
       localStorage.isPause = true;
       this.classList.remove("btn-info");
       this.classList.add("btn-danger");
-      this.value = "Paused";
+      this.value = "OFF";
     }
   })
 
