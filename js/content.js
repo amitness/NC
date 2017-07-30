@@ -2,7 +2,6 @@ chrome.runtime.sendMessage({
   method: "getLocalStorage"
 }, function(response) {
   var usd = Number(response.USD);
-
   // ======================== TEST =============================
   regReplace(/(\$|usd|usd:)\s?(,?\.?\d)+/i, /[^0-9.]/ig, usd);
   setInterval(function() {
@@ -13,6 +12,7 @@ chrome.runtime.sendMessage({
 
 
 function regReplace(reg, filterReg, rate) {
+  var total = 0;
   /*
     ARGS:
       reg:  RegEX to match currency string.
@@ -20,7 +20,6 @@ function regReplace(reg, filterReg, rate) {
       rate: exchange rate in NPR to conver.
    */
   var elements = document.getElementsByTagName('*');
-  var total = 0;
   for (var i = 0; i < elements.length; i++) {
     var element = elements[i];
 
@@ -44,5 +43,6 @@ function regReplace(reg, filterReg, rate) {
   }
   if (total>0) {
     console.log("[*] NC converted "+total+" price into NPR.");
+    chrome.runtime.sendMessage({method: "count", converted: total});
   }
 }

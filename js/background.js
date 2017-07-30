@@ -7,6 +7,9 @@ if (!localStorage.lastUpdate) {
 if (!localStorage.updateRate) {
   localStorage.updateRate = 1000;
 }
+if (!localStorage.totalConverted) {
+  localStorage.totalConverted = 0;
+}
 
 getData(); //get data from server
 setInterval(function () {
@@ -16,11 +19,22 @@ setInterval(function () {
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   // serve data to content script
     if (request.method == "getLocalStorage")
+    // {method : "getLocalStorage"} to get whole localStorage
       if(request.key){
+        // {method: "getLocalStorage", key: "key"} to get single data
         sendResponse({key : localStorage[request.key]});
       }else{
         sendResponse(localStorage); // send whole localStorage if key is not given
       }
-    else
+    else{
       sendResponse({}); // empty.
+    }
+
+    if (request.method == "count") {
+        if (request.converted) {
+          // {method: "count", converted: num} to increase total converted value
+          localStorage["totalConverted"] = Number(localStorage["totalConverted"])
+            + Number(request.converted);
+        }
+    }
 });
