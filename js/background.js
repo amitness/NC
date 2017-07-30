@@ -51,6 +51,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
           status: true
         });
       } else {
+        localStorage.lastBlock = request.url;
         sendResponse({
           status: false
         });
