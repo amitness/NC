@@ -1,6 +1,8 @@
 # NC
 Chrome extension that automatically localizes prices on webpages to Nepalese Currency.
 
+![Imgur](http://i.imgur.com/G2HC8Zr.gif)
+
 
 ## Idea
 The idea is to implement a simple browser extension that:
