@@ -1,4 +1,33 @@
+hr{
+  margin: 5px 0px;
+}
+
+nav > img {
+  width: 60px;
+  height: 60px;
+  display: inline-grid;
+}
+.title{
+  display: inline-grid;
+}
+
 body{
   min-width: 400px;
   text-align: center;
+}
+
+.item{
+  margin-top: 2px;
+  cursor: pointer;
+  background-color: #eaeaea;
+  padding: 5px 0px;
+  padding-left: 40px;
+  font-size:16px;
+  text-align: left;
+}
+
+.mark{
+  color: rgb(224, 160, 49);
+  border-radius: 5px;
+  background: rgb(78, 78, 78);
 }
