@@ -7,10 +7,10 @@ function main() {
 }
 
 function varUpdate() {
-  $("#totalConverted")[0].innerText = localStorage.totalConverted;
-
   $("#lastUpdate")[0].innerText = Math.round(((new Date().getTime() -
     new Date(localStorage.lastUpdate).getTime()) / 1000 / 60)) + " min ago.";
+  $("#forex-usd")[0].innerText = "Rs."+localStorage.USD;
+  $("#totalConverted")[0].innerText = localStorage.totalConverted;
 }
 
 
@@ -22,7 +22,6 @@ function varStatic() {
     powerBtn.classList.add("btn-info");
     powerBtn.value = "ON";
   }
-
   $("#powerBtn").click(function() {
     if (localStorage.isPause == "true") {
       localStorage.isPause = false;

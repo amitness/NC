@@ -66,5 +66,5 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 if (localStorage.isPause == "true") {
   chrome.browserAction.setIcon({path:"img/logo-gray.png"});
 } else {
-  chrome.browserAction.setIcon({path:"img/logo.php"});
+  chrome.browserAction.setIcon({path:"img/logo.png"});
 }

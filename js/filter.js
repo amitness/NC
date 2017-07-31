@@ -3,7 +3,7 @@ function filter(url) {
   // Return true or flase
 
   if (localStorage.isPause == "true") {
-    return false;
+    return false; // if paused
   } // end:
 
   return true;
