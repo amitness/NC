@@ -20,5 +20,5 @@
    "offline_enabled": true,
    "permissions": [ "<all_urls>", "tabs", "webNavigation", "storage"],
    "version": "1.0",
-   "web_accessible_resources": [ "img/icon.png"]
+   "web_accessible_resources": [ "img/logo.png", "img/logo-gray.png"]
 }

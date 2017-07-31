@@ -20,6 +20,7 @@ setInterval(function() {
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   // serve data to content script
+  // ===========================================================================
   if (request.method == "getLocalStorage") {
     // {method : "getLocalStorage"} to get whole localStorage
     if (request.key) {
@@ -60,3 +61,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   }
   // ===========================================================================
 });
+
+
+if (localStorage.isPause == "true") {
+  chrome.browserAction.setIcon({path:"img/logo-gray.png"});
+} else {
+  chrome.browserAction.setIcon({path:"img/logo.php"});
+}

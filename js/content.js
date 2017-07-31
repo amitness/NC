@@ -7,7 +7,7 @@ chrome.runtime.sendMessage({
   regReplace(/(\$|usd|usd:)\s?(,?\.?\d)+/i, /[^0-9.]/ig, usd);
   setInterval(function() {
     regReplace(/(\$|usd|usd:)\s?(,?\.?\d)+/i, /[^0-9.]/ig, usd);
-  }, Number(localStorage.updateRate) * 5);
+  }, Number(localStorage.updateRate));
 
 });
 
