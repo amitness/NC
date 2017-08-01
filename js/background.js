@@ -5,7 +5,7 @@ if (!localStorage.lastUpdate) {
   localStorage.lastUpdate = false;
 }
 if (!localStorage.updateRate) {
-  localStorage.updateRate = 1000;
+  localStorage.updateRate = 2000;
 }
 if (!localStorage.totalConverted) {
   localStorage.totalConverted = 0;
