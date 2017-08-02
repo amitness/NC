@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=5">
+  <title>NC || options</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/options.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="page-header">
+        <img style="width: 60px; height: 60px;" src="img/logo.png" alt="NC">
+        <h1> Options </h1>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 ">
+
+        <label for="updateRate">Update rate in <span class='text-danger'>second</span>:</label>
+        <input id="updateRate" class="form-control" type="number" min='2' name="updateRate">
+        <div class="alert alert-info">
+          <strong>Update rate: </strong> How frequently extenction should check for currency and convert it.
+        </div>
+        <label for="fetchDelay">Fetch Delay in <span class='text-danger'>minutes</span>:</label>
+        <input id="fetchDelay" class="form-control" type="number" min='5' name="fetchDelay">
+        <div class="alert alert-info">
+          <strong>Fetch Delay: </strong> How frequently local data should be updated.
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6">
+        <label for="apiUrl">Api URL:</label>
+        <input id="apiUrl" class="form-control" type="text" name="updateRate">
+        <div class="alert alert-info">
+          <strong>Api URL: </strong> Url of api to get data from.
+          <span class='text-danger'>Don't change it unless url of api is changed.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/jquery.min.js" charset="utf-8"></script>
+  <script src="js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="js/options.js" charset="utf-8"></script>
+</body>
+
+</html>

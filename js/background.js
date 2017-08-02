@@ -7,16 +7,20 @@ if (!localStorage.lastUpdate) {
 if (!localStorage.updateRate) {
   localStorage.updateRate = 2000;
 }
+if (!localStorage.fetchDelay) {
+  localStorage.fetchDelay = 60000*10;
+}
 if (!localStorage.totalConverted) {
   localStorage.totalConverted = 0;
 }
 if (!localStorage.isPause) {
   localStorage.isPause = false;
 }
+
 getData(); //get data from server
 setInterval(function() {
   getData(); // repeat every 10 min.
-}, 1000 * 60 * 10);
+}, Number(localStorage.apiUpdateRate));
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   // serve data to content script
@@ -52,7 +56,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
           status: true
         });
       } else {
-        localStorage.lastBlock = request.url;
         sendResponse({
           status: false
         });
