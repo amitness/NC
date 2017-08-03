@@ -16,11 +16,14 @@ if (!localStorage.totalConverted) {
 if (!localStorage.isPause) {
   localStorage.isPause = false;
 }
+if (!localStorage.mode) {
+  localStorage.mode = 'auto';
+}
 
 getData(); //get data from server
 setInterval(function() {
   getData(); // repeat every 10 min.
-}, Number(localStorage.apiUpdateRate));
+}, Number(localStorage.fetchDelay));
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   // serve data to content script
@@ -63,6 +66,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     }
   }
   // ===========================================================================
+  if (request.method == "mode") {
+    sendResponse(localStorage.mode);
+  }
 });
 
 

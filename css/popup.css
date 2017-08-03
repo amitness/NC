@@ -31,3 +31,7 @@ body{
   border-radius: 5px;
   background: rgb(78, 78, 78);
 }
+
+.manShow {
+  display: none;
+}

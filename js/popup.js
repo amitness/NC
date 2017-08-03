@@ -1,3 +1,4 @@
+
 main();
 
 function main() {
@@ -15,6 +16,7 @@ function varUpdate() {
 
 
 function varStatic() {
+  // Start powerBtn
   if (localStorage.isPause == "true") {
     powerBtn.classList.add("btn-danger");
     powerBtn.value = "OFF";
@@ -35,6 +37,33 @@ function varStatic() {
       this.classList.add("btn-danger");
       this.value = "OFF";
       chrome.browserAction.setIcon({path:"img/logo-gray.png"});
+    }
+  })
+  // End powerBtn
+
+  // Start modeBtn
+  if (localStorage.mode == "auto") {
+    modeBtn.value = "Auto";
+    modeBtn.classList.add("btn-primary");
+  } else if(localStorage.mode == "manual") {
+    modeBtn.value = "Manual";
+    modeBtn.classList.add("btn-warning");
+    $(".manShow").show();
+  }
+
+  $("#modeBtn").click(function() {
+    if (localStorage.mode == "auto") {
+      localStorage.mode = "manual";
+      this.classList.remove("btn-primary");
+      this.classList.add("btn-warning");
+      modeBtn.value = "Manual";
+      $(".manShow").slideDown();
+    } else {
+      localStorage.mode = "auto";
+      this.classList.remove("btn-warning");
+      this.classList.add("btn-primary");
+      modeBtn.value = "Auto";
+      $(".manShow").slideUp();
     }
   })
 }
