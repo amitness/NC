@@ -10,7 +10,7 @@ function main() {
 function varUpdate() {
   $("#lastUpdate")[0].innerText = Math.round(((new Date().getTime() -
     new Date(localStorage.lastUpdate).getTime()) / 1000 / 60)) + " min ago.";
-  $("#forex-usd")[0].innerText = "Rs."+localStorage.USD;
+  $("#forex-usd")[0].innerText = "Rs. "+localStorage.USD;
   $("#totalConverted")[0].innerText = localStorage.totalConverted;
 }
 
