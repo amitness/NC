@@ -17,7 +17,7 @@ chrome.runtime.sendMessage({
       rate: eur
       // End EUR
     }
-  ]
+  ];
   chrome.runtime.sendMessage({
       method: "filter",
       url: location.href
@@ -37,13 +37,13 @@ chrome.runtime.sendMessage({
             onkeydown = onkeyup = function(e) {
               e = e || event; // to deal with IE
               map[e.keyCode] = e.type == 'keydown';
-              if (map[32] == true && map[17] == true && map[67] == true) {
+              if (map[32] === true && map[17] === true && map[67] === true) {
                 regReplace(arg);
               }
-            }
+            };
           }
           // end mode
-        })
+        });
       }
       // end filter
     });
