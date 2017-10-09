@@ -14,7 +14,7 @@ function getData() {
       console.log("[*] data updated.");
     }
   if (status == 'error') {
-    console.log("[!] error while updating.")
+    console.log("[!] error while updating.");
   }
-  })
+  });
 }

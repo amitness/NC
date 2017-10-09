@@ -38,7 +38,7 @@ function varStatic() {
       this.value = "OFF";
       chrome.browserAction.setIcon({path:"img/logo-gray.png"});
     }
-  })
+  });
   // End powerBtn
 
   // Start modeBtn
@@ -65,5 +65,5 @@ function varStatic() {
       modeBtn.value = "Auto";
       $(".manShow").slideUp();
     }
-  })
+  });
 }
