@@ -4,8 +4,8 @@ function getData() {
     if (status == "success") {
       $.each(data.Conversion.Currency, function(key, val) {
         if (val.BaseValue != "1") {
-          localStorage[val.BaseCurrency]=Number(val.TargetBuy)/Number(val.BaseValue);
-        }else{
+          localStorage[val.BaseCurrency] = Number(val.TargetBuy) / Number(val.BaseValue);
+        } else {
           localStorage[val.BaseCurrency] = val.TargetBuy;
           // NOTE: localStorage store everything as string
         }
