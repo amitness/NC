@@ -10,7 +10,7 @@ function getData() {
           // NOTE: localStorage store everything as string
         }
       });
-      localStorage["lastUpdate"] = new Date();
+      localStorage.lastUpdate = new Date();
       console.log("[*] data updated.");
     }
   if (status == 'error') {
