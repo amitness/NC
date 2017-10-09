@@ -21,19 +21,19 @@ function varStatic() {
     powerBtn.classList.add("btn-danger");
     powerBtn.value = "OFF";
   } else {
-    powerBtn.classList.add("btn-info");
+    powerBtn.classList.add("btn-success");
     powerBtn.value = "ON";
   }
   $("#powerBtn").click(function() {
     if (localStorage.isPause == "true") {
       localStorage.isPause = false;
       this.classList.remove("btn-danger");
-      this.classList.add("btn-info");
+      this.classList.add("btn-success");
       this.value = "ON";
       chrome.browserAction.setIcon({path:"img/logo.png"});
     } else {
       localStorage.isPause = true;
-      this.classList.remove("btn-info");
+      this.classList.remove("btn-success");
       this.classList.add("btn-danger");
       this.value = "OFF";
       chrome.browserAction.setIcon({path:"img/logo-gray.png"});
