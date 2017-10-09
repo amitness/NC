@@ -99,7 +99,7 @@ function regReplaceCore(data, text) {
   while (data.reg.test(text)) {
     found++;
     var cur = data.reg.exec(text)[0].replace(data.filterReg, '');
-    var text = text.replace(data.reg, "Rs. " + Math.ceil(data.rate * Number(cur)));
+    text = text.replace(data.reg, "Rs. " + Math.ceil(data.rate * Number(cur)));
   }
   return {
     text: text,
