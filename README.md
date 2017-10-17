@@ -1,5 +1,5 @@
 # NC
-Chrome extension that automatically localizes prices on webpages to Nepalese Currency.
+WebExtension that automatically localizes prices on webpages to Nepalese Currency.
 
 ![Imgur](http://i.imgur.com/G2HC8Zr.gif)
 
@@ -22,6 +22,23 @@ For example, when you visit amazon.com, you'll get all prices in $X replaced wit
   ```shell
   git clone https://github.com/amitness/NC
   ```
+
+### Testing on Firefox.
+Install web-ext tool using npm/yarn.
+```shell
+yarn global add web-ext
+```
+Navigate to the project and run
+```shell
+web-ext run
+```
+You can see extension in action.
+
+### Installing on Firefox.
+Build the extension and load it from `Addons -> Extensions -> Install Addon from file.`
+```shell
+web-ext build
+```
   
   ### Installing on Chrome
 
