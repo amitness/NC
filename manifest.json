@@ -12,6 +12,10 @@
       "default_popup": "popup.html"
    },
    "options_page": "options.html",
+   "options_ui":{
+      "options_page": "options.html",
+      "browser_style": true
+   },
    "description": "Convert foregin currency into nepali currency",
    "icons": {
       "128": "img/logo.png"
@@ -21,5 +25,10 @@
    "offline_enabled": true,
    "permissions": [ "<all_urls>", "tabs", "webNavigation", "storage"],
    "version": "1.0",
-   "web_accessible_resources": [ "img/logo.png", "img/logo-gray.png"]
+   "web_accessible_resources": [ "img/logo.png", "img/logo-gray.png"],
+   "applications": {
+      "gecko": {
+         "id": "nc@dineshdb.github.io"
+      }
+   }
 }

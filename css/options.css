@@ -1,13 +1,13 @@
-.page-header>img, .page-header>h1 {
+.page-header > img, .page-header > h1 {
   display: inline-flex;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
-.page-header>h1{
-  margin-left: 20px;
+.page-header > h1 {
   color: #666;
+  margin-left: 20px;
 }
 
-.alert{
-  margin: 10px 0px !important;
+.alert {
+  margin: 10px 0 !important;
 }

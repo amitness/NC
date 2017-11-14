@@ -1,13 +1,14 @@
-hr{
-  margin: 5px 0px;
+hr {
+  margin: 5px 0;
 }
 
 nav > img {
-  width: 60px;
-  height: 60px;
   display: inline-grid;
+  height: 60px;
+  width: 60px;
 }
-.title{
+
+.title {
   display: inline-grid;
 }
 
@@ -16,22 +17,22 @@ body{
   text-align: center;
 }
 
-.item{
-  margin-top: 2px;
-  cursor: pointer;
+.item {
   background-color: #eaeaea;
-  padding: 5px 0px;
-  padding-left: 40px;
+  cursor: pointer;
   font-size:16px;
+  margin-top: 2px;
+  padding: 5px 0;
+  padding-left: 40px;
   text-align: left;
 }
 
-.mark{
-  color: rgb(224, 160, 49);
-  border-radius: 5px;
+.mark {
   background: rgb(78, 78, 78);
+  border-radius: 5px;
+  color: rgb(224, 160, 49);
 }
 
-.manShow {
+.man-show {
   display: none;
 }

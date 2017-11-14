@@ -45,7 +45,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.method == "count") {
     if (request.converted) {
       // {method: "count", converted: num} to increase total converted value
-      localStorage["totalConverted"] = Number(localStorage["totalConverted"]) +
+      localStorage.totalConverted = Number(localStorage.totalConverted) +
         Number(request.converted);
     }
   }

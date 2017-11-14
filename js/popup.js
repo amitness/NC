@@ -10,7 +10,7 @@ function main() {
 function varUpdate() {
   $("#lastUpdate")[0].innerText = Math.round(((new Date().getTime() -
     new Date(localStorage.lastUpdate).getTime()) / 1000 / 60)) + " min ago.";
-  $("#forex-usd")[0].innerText = "Rs."+localStorage.USD;
+  $("#forex-usd")[0].innerText = "Rs. "+localStorage.USD;
   $("#totalConverted")[0].innerText = localStorage.totalConverted;
 }
 
@@ -21,24 +21,24 @@ function varStatic() {
     powerBtn.classList.add("btn-danger");
     powerBtn.value = "OFF";
   } else {
-    powerBtn.classList.add("btn-info");
+    powerBtn.classList.add("btn-success");
     powerBtn.value = "ON";
   }
   $("#powerBtn").click(function() {
     if (localStorage.isPause == "true") {
       localStorage.isPause = false;
       this.classList.remove("btn-danger");
-      this.classList.add("btn-info");
+      this.classList.add("btn-success");
       this.value = "ON";
       chrome.browserAction.setIcon({path:"img/logo.png"});
     } else {
       localStorage.isPause = true;
-      this.classList.remove("btn-info");
+      this.classList.remove("btn-success");
       this.classList.add("btn-danger");
       this.value = "OFF";
       chrome.browserAction.setIcon({path:"img/logo-gray.png"});
     }
-  })
+  });
   // End powerBtn
 
   // Start modeBtn
@@ -65,5 +65,5 @@ function varStatic() {
       modeBtn.value = "Auto";
       $(".manShow").slideUp();
     }
-  })
+  });
 }
