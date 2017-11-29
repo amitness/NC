@@ -8,8 +8,11 @@ function main() {
 }
 
 function varUpdate() {
-  $("#lastUpdate")[0].innerText = Math.round(((new Date().getTime() -
-    new Date(localStorage.lastUpdate).getTime()) / 1000 / 60)) + " min ago.";
+  lastUpdate = new Date().getTime() - new Date(localStorage.lastUpdate).getTime();
+  $("#lastUpdate")[0].innerText = lastUpdate /(1000) <60 ? Math.floor(lastUpdate/1000)+
+  " sec" : lastUpdate/(1000*60)<60 ? Math.floor(lastUpdate/(1000*60))+
+  " min" : lastUpdate/(1000*60*60)<24 ? Math.floor(lastUpdate/(1000*60*60))+
+  " hr" :  Math.floor(lastUpdate/(1000*60*60*24))+" days"; // preety printed updated time.
   $("#forex-usd")[0].innerText = "Rs. "+localStorage.USD;
   $("#totalConverted")[0].innerText = localStorage.totalConverted;
 }
