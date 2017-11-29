@@ -51,7 +51,7 @@ function varStatic() {
   } else if(localStorage.mode == "manual") {
     modeBtn.value = "Manual";
     modeBtn.classList.add("btn-warning");
-    $(".manShow").show();
+    $(".man-show").show();
   }
 
   $("#modeBtn").click(function() {
@@ -60,13 +60,13 @@ function varStatic() {
       this.classList.remove("btn-primary");
       this.classList.add("btn-warning");
       modeBtn.value = "Manual";
-      $(".manShow").slideDown();
+      $(".man-show").slideDown();
     } else {
       localStorage.mode = "auto";
       this.classList.remove("btn-warning");
       this.classList.add("btn-primary");
       modeBtn.value = "Auto";
-      $(".manShow").slideUp();
+      $(".man-show").slideUp();
     }
   });
 }
