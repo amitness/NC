@@ -14,6 +14,7 @@
    "options_page": "options.html",
    "options_ui":{
       "options_page": "options.html",
+      "page": "options.html",
       "browser_style": true
    },
    "description": "Convert foregin currency into nepali currency",
